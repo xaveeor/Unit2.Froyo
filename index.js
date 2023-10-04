@@ -12,9 +12,9 @@ const userFroyoOrder = prompt(
   froyoOrder.order = froyoArray
 
 //loop  through the array of flavors 
-for (var i=0; i <= froyoArray.length - 1; i++){
-  console.log()
-}
+//for (var i=0; i <= froyoArray.length - 1; i++){
+//  console.log()
+//}
 //looping through array
 for (const order of froyoArray) {
   console.log(order);
