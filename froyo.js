@@ -7,13 +7,12 @@ const userInputString = prompt(
 
      // Split the string of flavors into an array of flavors.
 const stringArray = userInputString.split(",");
+    //Test:
+    // if(stringArray === undefined) {
+    //     console.log("this is undefined")
+    // }; 
+    // console.log(stringArray);
 
-const flavors = [];
-    for(i = 0; i < stringArray.length; i++) {
-        const str = stringArray[i];
-        flavors.push(str);
-    };
-    
     //container for order
 const iceCreamOrder = {
     vanilla: 0,
@@ -22,19 +21,22 @@ const iceCreamOrder = {
     coffee: 0
 };
 
-function printIceCreamOrder(flavors) {
-    for(i = 0; i < flavors.length; i++) {
+function printIceCreamOrder(stringArray) {
+    // "Cannot read properties of undefined (reading length)" error here:
+    for(i = 0; i < stringArray.length; i++) {
     //access the individual flavors
     //increase the count of ice cream order depending on repetition of flavor
     //adding 1 to flavor count 
-       for(const key in iceCreamOrder) {
-        if(typeof flavors[i] == iceCreamOrder.key) {
-            iceCreamOrder.key = + 1;
-        }
-       }
+    for(const key in iceCreamOrder) {
+        if(stringArray[i] === "vanilla") {
+            iceCreamOrder["vanilla"] = iceCreamOrder["vanilla"] + 1;
+        };
     };
+    // //once loop is complete, console.table order 
+    //     console.table(iceCreamOrder);
+};
     //once loop is complete, console.table order 
     console.table(iceCreamOrder);
 };
-
-printIceCreamOrder(flavors);
+//fixed "undefined" error on line 26 by passing "stringArray" as a parameter to the function:
+printIceCreamOrder(stringArray);
